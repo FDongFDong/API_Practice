@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+
+import ListComponent from './components/ListComponent';
+import NewsPage from './page/NewsPage';
+import EventComponent from './components/EventComponent';
+import AxiosComponent from './components/AxiosComponent';
+import PharmacyPage from './page/PharmacyPage';
+import HospitalPage from './page/HospitalPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<ListComponent />}></Route>
+        <Route path="/event" element={<EventComponent />}></Route>
+        <Route path="/axios" element={<AxiosComponent />}></Route>
+        <Route path="/news" element={<NewsPage />}></Route>
+        <Route path="/pharmacy" element={<PharmacyPage />}></Route>
+        <Route path="/hospital" element={<HospitalPage />}></Route>
+      </Routes>
     </div>
   );
 }

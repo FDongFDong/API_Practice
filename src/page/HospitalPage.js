@@ -18,8 +18,9 @@ const HospitalPage = () => {
       url: 'http://apis.data.go.kr/B551182/hospInfoService1/getHospBasisList1',
       params: {
         ServiceKey:
-          'kgV8g6x1QMseU0yjZqv5z/hgFXaSL1bbnapIoJqUTys+NYRqhLbky0ZhIuJLbxDg4PCmMEZzQRc9FqC5fUNy3g==',
+          'uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ==',
         emdongNm: searchInput,
+        clCd: '31',
       },
     };
     axios(option).then((response) => {
@@ -30,6 +31,14 @@ const HospitalPage = () => {
 
   return (
     <div>
+      {/*
+            1.POST-MAN 을 통해서 '건강보험심사평가원_병원정보서비스' 테스트.
+            2.요청 리스폰스를 확인 후 소스 코드 작성
+             - NEWS api 와 동일한 형태의 리스트 작성
+             1. 구성요소 만들기 인풋, 버튼
+             2. 이벤트 바인딩
+             3. aixos 요청 작성하기 
+        */}
       <AppBar title={'병원 검색'}></AppBar>
       <SearchInput
         handleChange={handleChange}

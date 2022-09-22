@@ -1,7 +1,7 @@
-import { hasUnreliableEmptyValue } from '@testing-library/user-event/dist/utils';
 import axios from 'axios';
 import React, { useState } from 'react';
 import AppBar from '../components/Common/AppBar';
+import HospitalListItem from '../components/Hospital/HospitalListItem';
 import SearchInput from '../components/news/SearchInput';
 
 const HospitalPage = () => {
@@ -35,8 +35,16 @@ const HospitalPage = () => {
         handleChange={handleChange}
         handleClick={handleClick}
       ></SearchInput>
-      {hospitalList.map((hospital) => {
-        return <p>{hospital.yadmNm}</p>;
+      {hospitalList.map(({ addr, clCd, clCdNm, yadmNm, ykiho }) => {
+        return (
+          <HospitalListItem
+            addr={addr}
+            clCd={clCd}
+            clCdNm={clCdNm}
+            yadmNm={yadmNm}
+            ykiho={ykiho}
+          ></HospitalListItem>
+        );
       })}
     </div>
   );

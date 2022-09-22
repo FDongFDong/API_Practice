@@ -8,6 +8,7 @@ import EventComponent from './components/EventComponent';
 import AxiosComponent from './components/AxiosComponent';
 import PharmacyPage from './page/PharmacyPage';
 import HospitalPage from './page/HospitalPage';
+import HospitalDetailPage from './page/HospitalDetailPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/news" element={<NewsPage />}></Route>
         <Route path="/pharmacy" element={<PharmacyPage />}></Route>
         <Route path="/hospital" element={<HospitalPage />}></Route>
+        <Route path="/hospitaldetail" element={<HospitalDetailPage />}></Route>
       </Routes>
     </div>
   );
